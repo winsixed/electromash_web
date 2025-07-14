@@ -25,20 +25,6 @@ export default function Header() {
           <BoltIcon className="h-6 w-6 text-primary" aria-hidden="true" />
           <span className="ml-2">Электромашсервис</span>
         </Link>
-
-        {/* Desktop navigation */}
-        <nav className="hidden md:block" aria-label="Главное меню">
-          <ul className="menu menu-horizontal gap-2">
-            {items.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className={menuClasses}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
         {/* Mobile menu */}
         <Menu as="div" className="relative md:hidden">
           {({ open }) => (
