@@ -8,7 +8,10 @@ import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/outline
 export default function Home() {
   return (
     <>
-      <Head><title>Электромашсервис — Промышленные электродвигатели</title></Head>
+      <Head>
+        <title>Электромашсервис — Промышленные электродвигатели</title>
+        <link rel="canonical" href="https://electromash.example.com/" />
+      </Head>
       <Header />
       <main id="main-content">
         <section className="min-h-[80vh] bg-gradient-to-r from-[#0B1F4E] to-[#0D316B] flex items-center">
@@ -36,8 +39,10 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-semibold mb-4">О компании</h2>
             <p className="text-gray-700 leading-relaxed">
-              ООО «Электромашсервис» — надёжный поставщик промышленных
-              электродвигателей с индивидуальным подходом.
+              ООО «Электромашсервис» — это команда инженеров и техников, специализирующихся
+              на проектировании, производстве и сервисном обслуживании промышленных
+              электродвигателей. Наша миссия — обеспечить бесперебойную работу вашего
+              предприятия за счёт надёжных решений, инновационного подхода и персонального сервиса.
             </p>
           </div>
         </section>
@@ -46,15 +51,39 @@ export default function Home() {
             <h2 className="text-3xl font-semibold mb-6">Продукция</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6">
               {[
-                'Асинхронные двигатели',
-                'Двигатели постоянного тока',
-                'Генераторы постоянного тока',
-                'Тяговые двигатели',
-                'Тормоза и двигатели',
-                'Комплектующие',
-                'Вкладыши',
-                'Любые дополнительные категории',
-              ].map((title) => (
+                {
+                  title: 'Асинхронные двигатели',
+                  desc: 'Серии А4, ДАЗО4, АК, 2АОД для общепромышленного применения.'
+                },
+                {
+                  title: 'Двигатели постоянного тока',
+                  desc: 'Для специальных машин и технологического оборудования, с независимым регулированием скорости.'
+                },
+                {
+                  title: 'Генераторы постоянного тока',
+                  desc: 'Промышленные решения мощностью от 5 кВт до 500 кВт, с высоким КПД и надёжностью.'
+                },
+                {
+                  title: 'Тяговые двигатели',
+                  desc: 'Специально для железнодорожной и подвижной техники, с повышенной ударостойкостью.'
+                },
+                {
+                  title: 'Тормоза и двигатели',
+                  desc: 'Комплектные решения «двигатель + тормоз» для безопасного останова и удержания.'
+                },
+                {
+                  title: 'Комплектующие',
+                  desc: 'Подшипники, валы, кожухи, прокладки и другие запчасти для быстрой замены.'
+                },
+                {
+                  title: 'Вкладыши',
+                  desc: 'Износостойкие вкладыши для подшипников любой серии, с антикоррозионным покрытием.'
+                },
+                {
+                  title: 'Сервисное обслуживание',
+                  desc: 'Плановые и аварийные сервисы, модернизация оборудования и дистанционный мониторинг.'
+                }
+              ].map(({ title, desc }) => (
                 <motion.div
                   key={title}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +92,7 @@ export default function Home() {
                   className="border-4 border-blue-600 rounded-2xl p-8 hover:shadow-lg transition-transform duration-200 ease-out"
                 >
                   <h3 className="text-xl font-bold text-blue-600 mb-2">{title}</h3>
-                  <p className="text-gray-600">Описание товара или категории.</p>
+                  <p className="text-gray-600">{desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -77,19 +106,18 @@ export default function Home() {
                 <a href="tel:+74951234567">+7 (495) 123-45-67</a>
               </p>
               <p className="flex items-center">
-                <MapPinIcon className="w-5 h-5 mr-2 text-blue-600" aria-hidden="true" />
-                Казань, ул. Лаврентьева, д. 3А, офис 321
-              </p>
-            </div>
-            <div className="space-y-4">
-              <p className="flex items-center">
                 <EnvelopeIcon className="w-5 h-5 mr-2 text-blue-600" aria-hidden="true" />
                 <a href="mailto:info@electromash.ru">info@electromash.ru</a>
               </p>
               <p className="flex items-center">
                 <MapPinIcon className="w-5 h-5 mr-2 text-blue-600" aria-hidden="true" />
-                Дополнительный адрес
+                Казань, ул. Лаврентьева, д. 3А, офис 321
               </p>
+              <p className="flex items-center">
+                <MapPinIcon className="w-5 h-5 mr-2 text-blue-600" aria-hidden="true" />
+                Москва, ул. Пушкина, д. 10, офис 5 (филиал)
+              </p>
+              <p className="mt-4 text-gray-600">Пн–Пт: 9:00–18:00, Сб: 10:00–16:00</p>
             </div>
           </div>
         </section>

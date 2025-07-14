@@ -4,8 +4,7 @@ export default function Footer() {
       role="contentinfo"
       className="border-t border-gray-200 py-4 text-center text-sm text-gray-500"
     >
-      © {new Date().getFullYear()} ООО «Электромашсервис» &middot; ИНН
-      1657125708 &middot; ОГРН 1121690086134 &middot;{' '}
+      © {new Date().getFullYear()} ООО «Электромашсервис» · ИНН 1657125708 · ОГРН 1121690086134 ·{' '}
       <a href="/privacy-policy" className="underline">
         Политика конфиденциальности
       </a>
