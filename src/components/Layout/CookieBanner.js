@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { initCookieBanner } from '../assets/js/banner';
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -9,11 +8,6 @@ export default function CookieBanner() {
     }
   }, []);
 
-  useEffect(() => {
-    if (visible) {
-      initCookieBanner();
-    }
-  }, [visible]);
   if (!visible) return null;
   return (
     <aside
@@ -22,15 +16,19 @@ export default function CookieBanner() {
       aria-live="polite"
       aria-modal="true"
       aria-describedby="cookie-banner-text"
-      className="fixed bottom-0 left-0 right-0 bg-blue-100 p-4 flex justify-between items-center"
+      className="alert fixed bottom-0 left-0 right-0 bg-base-200 flex justify-between items-center"
     >
       <span id="cookie-banner-text" className="text-sm text-gray-700">
         Мы используем cookie. Подробнее в <a href="/privacy-policy">Политике обработки данных</a>.
       </span>
       <button
         id="cookie-accept"
-        className="btn min-h-[44px]"
+        className="btn btn-primary"
         aria-label="Принять cookie"
+        onClick={() => {
+          localStorage.setItem('cookiesAccepted', 'true');
+          setVisible(false);
+        }}
       >
         Принять
       </button>

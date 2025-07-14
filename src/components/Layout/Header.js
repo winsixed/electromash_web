@@ -12,23 +12,23 @@ export default function Header() {
   ];
 
   const menuClasses =
-    'inline-flex items-center px-3 py-2 min-h-[44px] text-gray-700 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary';
+    'btn btn-ghost normal-case';
 
   return (
-    <header role="banner" className="bg-white w-full shadow-sm">
-      <div className="container flex items-center justify-between py-4">
+    <header role="banner" className="shadow">
+      <div className="navbar bg-base-100 container">
         <Link
           href="/"
           aria-label="На главную"
-          className="flex items-center font-bold text-xl text-primary"
+          className="flex items-center font-bold text-xl"
         >
-          <BoltIcon className="h-6 w-6 text-secondary" aria-hidden="true" />
+          <BoltIcon className="h-6 w-6 text-primary" aria-hidden="true" />
           <span className="ml-2">Электромашсервис</span>
         </Link>
 
         {/* Desktop navigation */}
         <nav className="hidden md:block" aria-label="Главное меню">
-          <ul className="flex space-x-6">
+          <ul className="menu menu-horizontal gap-2">
             {items.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className={menuClasses}>
@@ -45,7 +45,7 @@ export default function Header() {
             <>
               <Menu.Button
                 aria-label="Меню"
-                className="p-3 min-h-[44px] text-gray-700 focus-visible:outline focus-visible:outline-secondary"
+                className="btn btn-ghost"
               >
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </Menu.Button>
@@ -57,15 +57,15 @@ export default function Header() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    className="absolute right-0 mt-2 w-48 origin-top-right rounded-lg border border-gray-200 bg-white shadow-lg focus:outline-none"
+                    className="absolute right-0 mt-2 w-48 origin-top-right rounded-box border bg-base-100 shadow-lg"
                   >
-                    <div className="py-2">
+                    <div className="menu">
                       {items.map((item) => (
                         <Menu.Item key={item.href} as={Fragment}>
                           {({ active }) => (
                             <Link
                               href={item.href}
-                              className={`block px-4 py-3 min-h-[44px] ${active ? 'bg-gray-100 text-secondary' : 'text-gray-700'}`}
+                              className={`px-4 py-3 ${active ? 'bg-base-200' : ''}`}
                             >
                               {item.label}
                             </Link>
