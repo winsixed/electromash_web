@@ -1,0 +1,52 @@
+@import 'normalize.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: white;
+  color: #3B82F6;
+  padding: 8px 16px;
+  z-index: 100;
+}
+.skip-link:focus-visible {
+  top: 0;
+}
+
+/* Visible focus styles */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent, #2563EB);
+  outline-offset: 2px;
+}
+
+/* Theme variables */
+:root {
+  --color-accent: #2563EB;
+}
+
+/* Motion reduce */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Card component */
+.card {
+  @apply bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition transform hover:-translate-y-1 hover:shadow-md;
+}
+
+/* Button component */
+.btn {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-lg font-medium transition hover:bg-blue-600;
+}
