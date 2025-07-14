@@ -22,7 +22,7 @@ export default function Document() {
         <style id="critical-css">{`
           .skip-link{position:absolute;top:-40px;left:0;background:#fff;color:#3B82F6;padding:8px 16px;z-index:100;}
           .skip-link:focus-visible{top:0;}
-          header{background-color:#f3f4f6;}
+          header{background-color:var(--color-surface);}
         `}</style>
         <meta name="description" content="Надёжный поставщик промышленных электродвигателей с индивидуальным подходом."/>
         <meta property="og:title" content="Электромашсервис — Промышленные электродвигатели"/>

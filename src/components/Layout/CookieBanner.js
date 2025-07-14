@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Alert from '../ui/Alert';
+import Button from '../ui/Button';
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -10,20 +12,19 @@ export default function CookieBanner() {
 
   if (!visible) return null;
   return (
-    <aside
+    <Alert
       id="cookie-banner"
       role="dialog"
       aria-live="polite"
       aria-modal="true"
       aria-describedby="cookie-banner-text"
-      className="alert fixed bottom-0 left-0 right-0 bg-base-200 flex justify-between items-center"
+      className="fixed bottom-0 left-0 right-0 flex justify-between items-center"
     >
       <span id="cookie-banner-text" className="text-sm text-gray-700">
         Мы используем cookie. Подробнее в <a href="/privacy-policy">Политике обработки данных</a>.
       </span>
-      <button
+      <Button
         id="cookie-accept"
-        className="btn btn-primary"
         aria-label="Принять cookie"
         onClick={() => {
           localStorage.setItem('cookiesAccepted', 'true');
@@ -31,7 +32,7 @@ export default function CookieBanner() {
         }}
       >
         Принять
-      </button>
-    </aside>
+      </Button>
+    </Alert>
   );
 }
