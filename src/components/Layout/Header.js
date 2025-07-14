@@ -15,7 +15,7 @@ export default function Header() {
     'btn btn-ghost normal-case';
 
   return (
-    <header role="banner" className="shadow">
+    <header role="banner" className="shadow bg-base-200">
       <div className="navbar bg-base-100 container">
         <Link
           href="/"

@@ -1,0 +1,21 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1F2937;
+  --color-secondary: #374151;
+  --color-accent: #10B981;
+  --color-background: #111827;
+  --color-surface: #1F2937;
+  --text-color: #F3F4F6;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: var(--text-color);
+}

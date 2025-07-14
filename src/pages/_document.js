@@ -11,7 +11,7 @@ export default function Document() {
     "contactPoint": [{ "@type": "ContactPoint", "telephone": "+74951234567", "contactType": "customer service" }]
   };
   return (
-    <Html lang="ru">
+    <Html lang="ru" className="dark">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
